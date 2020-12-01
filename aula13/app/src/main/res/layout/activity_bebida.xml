@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BebidaActivity">
+
+    <ImageView
+        android:id="@+id/foto"
+        android:layout_width="190dp"
+        android:layout_height="190dp" />
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/descricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+<!--    Para que o usuário possa selecionar a bebida como favorita iremos criar um botão de seleção,
+        chamado de Checkbox. Quando o usuário marcar a opção, então o banco de dados deve
+        ser atualizado informando que aquela é uma bebida favorita. Por isso referenciamos o método
+        onFavoritaClicked. Como o checkbox é um tipo de botão (ele herda da classe Button,
+        como podemos observar na documentação https://developer.android.com/reference/android/widget/CheckBox)
+        podemos usar diretamente a propriedade onClick. Assim, ao clicar nesse botão, verificamos
+        se o usuário "marcou" ou "desmarcou" a opção e assim fazemos a correta atualização no banco
+        de dados. -->
+    <CheckBox
+        android:id="@+id/favorita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/favorita"
+        android:onClick="onFavoritaClicked"/>
+</LinearLayout>
