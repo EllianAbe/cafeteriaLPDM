@@ -9,9 +9,6 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,12 +43,6 @@ public class ComidaActivity extends AppCompatActivity {
 
                 String nomeString = cursor.getString(0);
                 String descricaoString = cursor.getString(1);
-                int fotoId = cursor.getInt(2);
-                /*recuperamos do cursor a informação se a comida é favorita ou não. Como o SQLite
-                 * não tem a figura do tipo de dado booleano, criamos esse campo como numeric.
-                 * Entretanto, o checkbox usa um valor booleano para saber se ele está "marcado" ou não,
-                 * então fazemos um condicional para "converter" esse vamor numerico em um boleano. */
-                boolean isFavorita = (cursor.getInt(3) == 1);
 
                 TextView nome = (TextView) findViewById(R.id.nome);
                 nome.setText(nomeString);
