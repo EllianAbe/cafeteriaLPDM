@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /*Para ler os comentários desse código, o ideal é começar pela BebidaActivity e seu layout e depois a
 * MainActivity e seu layout */
 public class MainActivity extends AppCompatActivity {
@@ -40,10 +42,11 @@ public class MainActivity extends AppCompatActivity {
                                     int posicao, // a posicao no listview, começando em 0
                                     long id) { // o id da linha
 
-                if(posicao == 0){
-                    Intent intent = new Intent(MainActivity.this, CategoriaBebidaActivity.class);
-                    startActivity(intent);
-                }
+                Intent intent = new Intent(MainActivity.this, new Class[]{
+                        CategoriaBebidaActivity.class,
+                        CategoriaComidaActivity.class,
+                        CategoriaLocalidadeActivity.class}[posicao]);
+                startActivity(intent);
             }
         };
 
